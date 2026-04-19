@@ -786,10 +786,31 @@ main {
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-@media (min-width: 768px) {
+.greeting-text {
+    width: 100%;
+}
+@media (max-width: 991px) {
+    /* タブレット・スマートフォン：縦並び・写真中央 */
+    .greeting-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .greeting-img {
+        margin-bottom: 16px;
+    }
+    .greeting-text {
+        width: 100%;
+        text-align: left;
+    }
+}
+@media (min-width: 992px) {
+    /* PC：横並び */
     .greeting-box {
         flex-direction: row;
         align-items: flex-start;
+    }
+    .greeting-text {
+        flex: 1;
     }
 }
 
