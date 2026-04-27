@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>役員専用ページ - 東宮城野学区民体育振興会</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- ============================================================
+         🔑 パスワード設定
+         以下の PASS_KEY の値を書き換えてください。
+         例）const PASS_KEY = 'higashi2026';
+    ============================================================ -->
+    <script>
+        const PASS_KEY = 'taishin1970';
+
+        // body を一旦非表示にしてからチェック（コンテンツの一瞬表示を防ぐ）
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.style.display = 'none';
+        });
+
+        // 同期的に実行（描画前にチェック）
+        (function () {
+            var input = prompt('🔒 役員専用ページです。\nパスワードを入力してください。');
+            if (input === PASS_KEY) {
+                // 正解：DOMContentLoaded 後に表示
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.body.style.display = '';
+                });
+            } else {
+                // 不正解またはキャンセル
+                alert('アクセス権限がありません。\nトップページへ移動します。');
+                location.replace('index.html');
+            }
+        })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHJB5T7M00"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GHJB5T7M00');
+    </script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1 class="header-logo"><a href="index.html">東宮城野学区民体育振興会</a></h1>
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#home">新着情報</a></li>
+                    <li><a href="index.html#about">当会について</a></li>
+                    <li><a href="index.html#schedule">年間行事予定</a></li>
+                    <li><a href="index.html#gallery">活動のご案内</a></li>
+                    <li><a href="index.html#flow">申し込みの流れ</a></li>
+                    <li><a href="index.html#entry">イベント申込</a></li>
+                    <li><a href="index.html#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ページヘッダー -->
+        <section class="section" style="background-color: #1a365d; color: #fff; padding: 60px 0; text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin: 0;">🔒 役員専用ページ</h2>
+                <p style="margin-top: 12px; font-size: 0.95rem; opacity: 0.85;">このページの内容は役員のみ閲覧できます</p>
+            </div>
+        </section>
+
+        <!-- 申し込み状況セクション -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">現在の申し込み状況（リアルタイム）<span>Entry Status</span></h2>
+
+                <div style="
+                    background: #fff;
+                    border: 2px solid #c8ddf0;
+                    border-radius: 16px;
+                    padding: 28px 24px 20px;
+                    box-shadow: 0 4px 18px rgba(0, 80, 136, 0.08);
+                ">
+                    <iframe
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSwocCcbRszcVcmw17OhX630HrWxvD7eli0QsX8r1QyDo_46YgILjzDFQk-rwR3OjsGXdn1i65mzQUJ/pubhtml?gid=2048400136&amp;single=true&amp;widget=true&amp;headers=false"
+                        width="100%"
+                        height="600"
+                        style="border: 0; display: block; border-radius: 8px;"
+                        title="申し込み状況スプレッドシート"
+                    ></iframe>
+                    <p style="
+                        margin-top: 12px;
+                        font-size: 0.82rem;
+                        color: #777;
+                        text-align: right;
+                    ">※情報が最新でない場合は、ブラウザの再読み込みボタンを押してください。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- トップページへ戻るボタン -->
+        <div style="text-align: center; margin: 40px 0 80px;">
+            <a href="index.html"
+                style="display: inline-block; padding: 15px 40px; background-color: #1a365d; color: #fff; text-decoration: none; border-radius: 30px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: opacity 0.3s, transform 0.3s;"
+                onmouseover="this.style.opacity=0.8; this.style.transform='translateY(-2px)'"
+                onmouseout="this.style.opacity=1; this.style.transform='translateY(0)'">トップページへ戻る</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h2>東宮城野学区民体育振興会</h2>
+                    <p style="margin-top: 10px; font-size: 0.9em; line-height: 1.6;">
+                        ※当会は専用の事務所および電話窓口を設けておりません。<br>
+                        ※活動に関するご質問やご連絡は、以下のフォームよりお願いいたします。<br>
+                        <a href="index.html#contact"
+                            style="display: inline-block; margin-top: 10px; color: #fff; text-decoration: underline;">▶
+                            お問い合わせフォームはこちら</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 東宮城野学区民体育振興会</p>
+                <a href="#" class="admin-link">🔒 役員専用ページ</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニューの挙動
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            const navLinks = document.querySelectorAll('.nav-list a');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
