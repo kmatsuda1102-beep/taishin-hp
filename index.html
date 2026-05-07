@@ -24,25 +24,7 @@
 
 <body>
 
-    <!-- ============================================================
-         お知らせポップアップ（スプラッシュ画面）
-         募集期間終了後は下記 <div id="campaign-banner"> ～ </div> を
-         コメントアウトするだけで非表示にできます。
-    ============================================================ -->
-    <div id="campaign-banner">
-        <div id="campaign-overlay">
-            <div id="campaign-modal">
-                <button id="campaign-close" aria-label="閉じる">&#x2715;</button>
-                <a href="softball.html" id="campaign-poster-link">
-                    <img
-                        src="images/softball/親睦ソフトボール大会2026ポスター.png"
-                        alt="親睦ソフトボール大会2026 参加者募集中！"
-                        id="campaign-poster"
-                    >
-                </a>
-            </div>
-        </div>
-    </div>
+
     <header class="header">
         <div class="header-inner">
             <h1 class="header-logo"><a href="#">東宮城野学区民体育振興会</a></h1>
@@ -403,37 +385,7 @@
             });
         });
 
-            // ============================================================
-            // お知らせポップアップ（スプラッシュ画面）の制御
-            // ============================================================
-            const campaignBanner = document.getElementById('campaign-banner');
-            const campaignClose  = document.getElementById('campaign-close');
 
-            if (campaignBanner && campaignClose) {
-                // ポップアップを非表示にする関数
-                const hideCampaign = () => {
-                    campaignBanner.classList.add('campaign-hidden');
-                };
-
-                // × ボタンで閉じる
-                campaignClose.addEventListener('click', hideCampaign);
-
-                // スクロールで閉じる（1px でも動いたら即閉じる）
-                const onScroll = () => {
-                    if (window.scrollY > 0) {
-                        hideCampaign();
-                        window.removeEventListener('scroll', onScroll);
-                    }
-                };
-                window.addEventListener('scroll', onScroll, { passive: true });
-
-                // オーバーレイ（背景部分）クリックでも閉じる
-                document.getElementById('campaign-overlay').addEventListener('click', (e) => {
-                    if (e.target === document.getElementById('campaign-overlay')) {
-                        hideCampaign();
-                    }
-                });
-            }
     </script>
 </body>
 
